@@ -27,3 +27,34 @@ public:
             return false;
     }
 };
+
+//Approach 2 : Binary search
+//TC - O(KMlogN)
+//SC - O(N)
+//https://leetcode.com/problems/is-subsequence/discuss/1811858/3-Methods-or-2-Pointer-or-DP-or-Follow-Up-or-C%2B%2B
+
+/*
+class Solution {
+public:
+
+bool isSubsequence(string s, string t) {
+        unordered_map<char, vector<int>> map;
+        int m = s.length(), n = t.length();
+        
+        for(int i=0; i<n; i++)
+            map[t[i]].push_back(i);
+        
+        int lastCharPos = -1;
+        for(char ch : s){
+            auto pos = upper_bound(begin(map[ch]), end(map[ch]), lastCharPos);
+            if(pos == end(map[ch]))
+                return false;
+            else
+                lastCharPos = *pos;
+        }
+        return true;
+    }
+};
+
+
+*/
